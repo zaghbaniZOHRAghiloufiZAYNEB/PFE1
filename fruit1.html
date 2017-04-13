@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Learn English</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<!--[if IE 6]><link rel="stylesheet" type="text/css" href="css/ie6.css"><![endif]-->
+<script>
+	   	// Detection des ancien navigateurs qui ne supportent pas l'element Canvas
+		// Appelle une page par defaut
+	    if (!document.createElement("canvas").getContext)
+	    {
+			window.open("http://www.clickteam.fr/html5/html5-fallback", "_self");
+		}
+	</script>
+	
+  	<!-- EXTRASOURCES -->
+	<!-- Charge le code Javascript...-->
+  	<script src="fruit/src/Runtime.js"></script>
+  	
+  <script>
+
+	// Detecte si le code HTML est lance localement
+	// Vous pouvez enlever ce code pour la version finale
+	if (window.location.protocol == "file:")
+	{
+		document.write('<div id="bloctxt">');
+		document.write("<h1>Impossible de lancer l'application...</h1>");
+		document.write("<p>Les navigateurs Internet modernes ne vous permettent pas de lancer des pages Web <br>directement a partir de l'ordinateur.<br>");
+		document.write("Un glisser-deposer d'un fichier HTML ne fonctionnera pas plus, quelle que soit la machine.<br>");
+		document.write("Utilisez l'option Construire & Lancer pour tester votre application (elle lance un serveur Web local),<br>") 
+		document.write("ou t&eacutel&eacutechargez votre application sur un serveur Web...</p>");
+		document.write('</div>');
+		throw new error("Cannot run application");
+	}
+  </script>
+</head>
+<body>
+<div id="mainPan">
+  <div id="leftPan">
+<div id="header">
+  <div> <a href="index.html"><img src="images/arabic.jpg" alt=""></a>
+  
+    <ul >
+      <li class="current" ><a href="index.html"> الصفحةالرئسية </a></li>
+      <li><a href="parent.html">فضاء الولي</a></li>
+	  <li><a href="login.html">الدخول</a></li>
+	  <li><a href="signup.html">التسجيل</a></li>
+	  <li><a href="contact.html">تواصل</a></li>
+    </ul>
+	<br>
+	 </div>
+  </div>
+ </div>
+ <div class="card" style="width: 20rem;">
+  <div id="canvas">
+			    <canvas id="MMFCanvas" width="640" height="480">
+				    <p>Votre navigateur ne supporte pas les Canvas.</p>
+			    </canvas>   
+		    </div>
+</div>
+<script>
+        window.rs = "fruit/src/Runtime.js";
+        window.fs = "1355683";
+    </script>
+    <script>
+        // RUNTIMESTART
+        // Endroit ou l'application est effectivement lancee
+        window.addEventListener("load", windowLoaded, false);
+        function windowLoaded()
+        {
+            // Appelle le runtime
+            // Premier parametre : le nom de l'element Canvas
+            // Second parametre : chemin vers le fichier CCH. Les sons et les images doivent se trouver a cote 
+            new Runtime("MMFCanvas", "fruit/resources/FROUIT.cch");
+        }
+        // RUNTIMESTARTEND
+    </script>
